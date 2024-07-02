@@ -1,19 +1,22 @@
 #include <string.h> 
 
-char* encrypt(char* rawText, int key)
+extern "C"
 {
-	for (int i = 0; i < strlen(rawText); i++)
+	__declspec(dllexport) char* encrypt(char* rawText, int key)
 	{
-		rawText[i] += key;
+		for (int i = 0; i < strlen(rawText); i++)
+		{
+			rawText[i] += key;
+		}
+		return rawText;
 	}
-	return rawText;
-}
 
-char* decrypt(char* encryptedText, int key)
-{
-	for (int i = 0; i < strlen(encryptedText); i++)
+	__declspec(dllexport) char* decrypt(char* encryptedText, int key)
 	{
-		encryptedText[i] -= key;
+		for (int i = 0; i < strlen(encryptedText); i++)
+		{
+			encryptedText[i] -= key;
+		}
+		return encryptedText;
 	}
-	return encryptedText;
 }
