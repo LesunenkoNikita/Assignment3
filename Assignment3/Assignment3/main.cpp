@@ -7,7 +7,7 @@ int main(void)
 {
 	typedef char* (*encrypt_ptr_t)(char*, int);
 	typedef char* (*decrypt_ptr_t)(char*, int);
-	HINSTANCE handle = LoadLibrary(TEXT("func.dll"));
+	HINSTANCE handle = LoadLibrary(TEXT("caesar.dll"));
 	if
 		(handle == nullptr || handle == INVALID_HANDLE_VALUE)
 	{
