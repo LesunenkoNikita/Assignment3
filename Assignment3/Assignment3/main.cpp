@@ -48,7 +48,7 @@ int main(void)
 			fgets(key_input, 16, stdin);
 			key_input[strcspn(key_input, "\n")] = '\0';
 			int key = atoi(input);
-			encrypt(text, key);
+			printf(encrypt(text, key));
 			continue;
 		}
 		else if (strcmp(input, "2") == 0)
@@ -62,7 +62,7 @@ int main(void)
 			fgets(key_input, 16, stdin);
 			key_input[strcspn(key_input, "\n")] = '\0';
 			int key = atoi(input);
-			decrypt(text, key);
+			printf(decrypt(text, key));
 			continue;
 		}
 		else
