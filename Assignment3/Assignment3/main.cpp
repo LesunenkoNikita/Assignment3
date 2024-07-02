@@ -49,7 +49,7 @@ int main(void)
 			key_input[strcspn(key_input, "\n")] = '\0';
 			int key = atoi(input);
 			printf(encrypt(text, key));
-			printf('\n');
+			printf("\n");
 			continue;
 		}
 		else if (strcmp(input, "2") == 0)
@@ -64,7 +64,7 @@ int main(void)
 			key_input[strcspn(key_input, "\n")] = '\0';
 			int key = atoi(input);
 			printf(decrypt(text, key));
-			printf('\n');
+			printf("\n");
 			continue;
 		}
 		else
