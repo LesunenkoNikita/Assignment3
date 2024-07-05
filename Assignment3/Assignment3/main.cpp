@@ -40,31 +40,35 @@ int main(void)
 		if (strcmp(input, "1") == 0)
 		{
 			printf("Enter the text you want to encrypt: ");
-			char text[256];
+			char *text = (char*)malloc(256 * sizeof(char));
 			fgets(text, 256, stdin);
 			text[strcspn(text, "\n")] = '\0';
 			printf("Enter the key you want to encrypt the text with: ");
-			char key_input[16];
+			char* key_input = (char*)malloc(16 * sizeof(char));
 			fgets(key_input, 16, stdin);
 			key_input[strcspn(key_input, "\n")] = '\0';
-			int key = atoi(input);
+			int key = atoi(key_input);
 			printf(encrypt(text, key));
 			printf("\n");
+			free(text);
+			free(key_input);
 			continue;
 		}
 		else if (strcmp(input, "2") == 0)
 		{
 			printf("Enter the text you want to decrypt: ");
-			char text[256];
+			char* text = (char*)malloc(256 * sizeof(char));
 			fgets(text, 256, stdin);
 			text[strcspn(text, "\n")] = '\0';
 			printf("Enter the key you want to decrypt the text with: ");
-			char key_input[16];
+			char* key_input = (char*)malloc(16 * sizeof(char));
 			fgets(key_input, 16, stdin);
 			key_input[strcspn(key_input, "\n")] = '\0';
-			int key = atoi(input);
+			int key = atoi(key_input);
 			printf(decrypt(text, key));
 			printf("\n");
+			free(text);
+			free(key_input);
 			continue;
 		}
 		else
